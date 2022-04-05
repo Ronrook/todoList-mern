@@ -1,15 +1,15 @@
 const mongoose = require('mongoose');
 
 
-const URI = 'mongodb://localhost/tasklist';
+const URI = process.env.MONGODB_URI;
 
 mongoose.connect(URI, {
     useNewUrlParser:true,
     useUnifiedTopology: true,
-    useCreateIndex:true,
-    useFindAndModify: false
+    
+    
 })
-    .then(db=>console.log('base de datos conectada'))
+    .then(db=>console.log('base de datos conectada con exito'))
     .catch(error=>console.log('No se puede conectar'))
 
 
